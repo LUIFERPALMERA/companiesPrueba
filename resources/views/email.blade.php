@@ -1,0 +1,1 @@
+<p>Se ha creado una nueva compañía con nombre <strong>{{$name}}</strong></p>

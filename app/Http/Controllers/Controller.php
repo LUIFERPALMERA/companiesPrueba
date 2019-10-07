@@ -10,4 +10,11 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function set_language($lang){
+        if(array_key_exists($lang,config('languages'))){
+            session()->put('applocate', $lang);
+        }
+        return back();
+    }
 }
