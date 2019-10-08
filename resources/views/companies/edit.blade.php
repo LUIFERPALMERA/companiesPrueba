@@ -63,7 +63,7 @@
                                 <label for="website" class="col-md-4 col-form-label text-md-right">{{ __('form.label_website') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="website" type="url" class="form-control @error('website') is-invalid @enderror" name="website" value="{{$company->website}}" required autocomplete="website" autofocus>
+                                    <input id="website" type="url" class="form-control @error('website') is-invalid @enderror" name="website" value="{{$company->website}}" autocomplete="website" autofocus>
 
                                     @error('website')
                                         <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('form.label_email') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$company->email}}" required autocomplete="email">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$company->email}}" autocomplete="email">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">

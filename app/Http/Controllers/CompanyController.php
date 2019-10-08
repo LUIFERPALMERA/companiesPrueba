@@ -57,7 +57,7 @@ class CompanyController extends Controller
         $company->name = $request->name;
         $company->email  = $request->email;
         
-        if($request->ruta != null){
+        if($request->logo != null){
             $date = Carbon::now();
             $ruta = $request->name."-".date("Ymd-His").".".$request->logo->getClientOriginalExtension();
             \Storage::disk('public')->put($ruta,  \File::get($request->logo));
@@ -127,7 +127,7 @@ class CompanyController extends Controller
         $company = Company::find($request->id);
         $company->name = $request->name;
         $company->email  = $request->email;
-        if($request->ruta != null){
+        if($request->logo != null){
             $date = Carbon::now();
             $ruta = $request->name."-".date("Ymd-His").".".$request->logo->getClientOriginalExtension();
             \Storage::disk('public')->put($ruta,  \File::get($request->logo));
