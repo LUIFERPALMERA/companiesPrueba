@@ -130,7 +130,7 @@ class CompanyController extends Controller
         if($request->logo != null){
             $date = Carbon::now();
             $ruta = $request->name."-".date("Ymd-His").".".$request->logo->getClientOriginalExtension();
-            \Storage::disk('public')->put($ruta,  \File::get($request->logo));
+            \Storage::disk('local')->put($ruta,  \File::get($request->logo));
             $company->logo = "/storage/".$ruta;
         }
         $company->website = $request->website;
