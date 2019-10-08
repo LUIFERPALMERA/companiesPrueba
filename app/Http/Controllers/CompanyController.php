@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\User;
 use App\Mail;
 use App\Mail\MailNotify;
+use App\Employee;
 
 
 class CompanyController extends Controller
@@ -157,6 +158,9 @@ class CompanyController extends Controller
         //si hay errores returna array de errores
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->errors());
+        }
+        if(Employee::where('company_id',$request->id)->first() != null){
+            return redirect()->route('companies.index')->with('error_message', __('form.notdelete'));
         }
         $company = Company::find($request->id);
 

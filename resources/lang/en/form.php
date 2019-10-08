@@ -38,5 +38,6 @@ return [
     'label_company' => 'Company',
     'label_phone' => 'Phone',
 
-    'action_successful' => 'Action maked with success'
+    'action_successful' => 'Action maked with success',
+    'notdelete' => 'The company is related. Therefore, it cannot be deleted.'
 ];
