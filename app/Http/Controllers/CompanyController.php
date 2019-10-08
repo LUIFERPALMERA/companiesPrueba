@@ -131,7 +131,7 @@ class CompanyController extends Controller
             $date = Carbon::now();
             $ruta = $request->name."-".date("Ymd-His").".".$request->logo->getClientOriginalExtension();
             \Storage::disk('public')->put($ruta,  \File::get($request->logo));
-            $company->logo = "/storage/".$ruta;
+            $company->logo = "/storage/app/public/".$ruta;
         }
         $company->website = $request->website;
         $company->save();
